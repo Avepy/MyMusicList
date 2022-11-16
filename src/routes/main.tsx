@@ -43,6 +43,9 @@ export default function Main(): JSX.Element {
                                 </div>
                                 <div className="item-rating">
                                     <div className="item-rating-list">
+                                        <div className="rating-text">
+                                            Rating:
+                                        </div>
                                         <select name="rating" id="rating" onInput={
                                             (e) => {
                                                 let rating = e.currentTarget.value;

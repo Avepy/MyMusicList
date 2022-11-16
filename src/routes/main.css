@@ -87,6 +87,13 @@
     align-items: flex-start;
 }
 
+.item-rating-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 img {
     width: 100%;
     max-width: 100px;
@@ -114,6 +121,14 @@ button:hover {
     box-shadow: 0 0 5px 0 rgba(126, 17, 143, 0.8);
 }
 
+.rating-text {
+    display: inline;
+    margin-right: 7px;
+    font-size: 1.1em;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
 select {
     width: 50px;
     height: 20px;
@@ -127,6 +142,7 @@ select {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     text-align: center;
+    margin-top: 5px;
 }
 
 select:hover {
