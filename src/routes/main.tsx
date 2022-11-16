@@ -15,7 +15,7 @@ export default function Main(): JSX.Element {
                     <div className="search">
                         <input type="text" placeholder="Search for some cool music... ((press enter to submit))" className="search-input" onKeyUp={(e) => {
                             if (e.key === 'Enter' && e.currentTarget.value !== '') {
-                                dispatch(addToList({ title: e.currentTarget.value, artist: 'Unknown', plays: Math.floor(Math.random() * 100000)}));
+                                dispatch(addToList({ title: e.currentTarget.value, artist: 'Unknown', plays: Math.floor(Math.random() * 100000), rating: 1 }));
                                 let input = document.querySelector('.search-input') as HTMLInputElement;
                                 input.value = '';
                             }
@@ -46,7 +46,7 @@ export default function Main(): JSX.Element {
                                         <div className="rating-text">
                                             Rating:
                                         </div>
-                                        <select name="rating" id="rating" onInput={
+                                        <select name="rating" className="rating" onInput={
                                             (e) => {
                                                 let rating = e.currentTarget.value;
                                                 dispatch(editRating({ title: item.title, artist: item.artist, plays: item.plays, rating: rating }));
@@ -62,7 +62,7 @@ export default function Main(): JSX.Element {
                                 </div>
                                 <div className="item-actions">
                                     <button className="item-action-remove" onClick={() => dispatch(removeFromList(
-                                        { title: item.title, artist: item.artist, plays: item.plays }
+                                        { title: item.title, artist: item.artist, plays: item.plays, rating: item.rating }
                                     ))}>Remove</button>
                                 </div>
                             </div>
