@@ -13,13 +13,20 @@ export default function Main(): JSX.Element {
             <div className="content">
                 <div className="nav">
                     <div className="search">
-                        <input type="text" placeholder="Search for some cool music... ((press enter to submit))" className="search-input" onKeyUp={(e) => {
+                        <input type="text" placeholder="Search for some cool music..." className="search-input" onKeyUp={(e) => {
                             if (e.key === 'Enter' && e.currentTarget.value !== '') {
                                 dispatch(addToList({ title: e.currentTarget.value, artist: 'Unknown', plays: Math.floor(Math.random() * 100000), rating: 1 }));
                                 let input = document.querySelector('.search-input') as HTMLInputElement;
                                 input.value = '';
                             }
                         }} />
+                        <button className="search-button" onClick={() => {
+                            let input = document.querySelector('.search-input') as HTMLInputElement;
+                            if (input.value !== '') {
+                                dispatch(addToList({ title: input.value, artist: 'Unknown', plays: Math.floor(Math.random() * 100000), rating: 1 }));
+                                input.value = '';
+                            }
+                        }}>Enter</button>
                     </div>
                 </div>
                 <div className="list">
