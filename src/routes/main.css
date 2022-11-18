@@ -59,11 +59,17 @@
     border-radius: 10px;
 }
 
+@media (max-width: 600px) {
+    .search-button {
+        display: none;
+    }
+}
+
 .list {
     margin: 0 auto;
     margin-top: 3rem;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     max-height: 600px;
     overflow-y: auto;
     padding: 10px;
@@ -110,6 +116,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+}
+
+.item-image {
+    padding: 10px;
 }
 
 .item-rating-list {
