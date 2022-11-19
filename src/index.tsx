@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Main from './routes/main';
+import Redirect from './routes/redirect';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 
@@ -19,6 +20,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/redirect" element={<Redirect />} />
         </Routes>
       </HashRouter>
     </Provider>

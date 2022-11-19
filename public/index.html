@@ -17,4 +17,12 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+  <script>
+    let url = window.location.href;
+    if (url.includes('access_token')) {
+      let token = url.split('access_token=')[1].split('&')[0];
+      localStorage.setItem('token', token);
+      window.location.href = "http://localhost:3000/#/redirect";
+    }
+  </script>
 </html>
