@@ -35,6 +35,7 @@ async function checkAPIConnection() {
     });
     
     if (response.status === 200) {
-        window.location.href = "http://localhost:3000/MyMusicList/#/main";
+        window.location.href = "https://avepy.github.io/MyMusicList/#/main";
+        // http://localhost:3000/MyMusicList/#/main
     }
 }

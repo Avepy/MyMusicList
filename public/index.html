@@ -22,7 +22,8 @@
     if (url.includes('access_token')) {
       let token = url.split('access_token=')[1].split('&')[0];
       localStorage.setItem('token', token);
-      window.location.href = "http://localhost:3000/#/redirect";
+      window.location.href = "https://avepy.github.io/MyMusicList/#/redirect";
+      // http://localhost:3000/MyMusicList/#/redirect
     }
   </script>
 </html>
