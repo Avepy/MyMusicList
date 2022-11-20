@@ -3,14 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 interface MusicListItems {
     title: string;
     artist: string;
-    plays: number;
+    popularity: number;
+    url: string;
     rating: number;
 }
 
 export const musicListSlice = createSlice({
     name: 'musicList',
     initialState: {
-        musicList: [{title: "Example", artist: "Example", plays: 0, rating: 1}] as MusicListItems[],
+        musicList: [] as MusicListItems[],
     },
     reducers: {
         addToList: (state, action) => {
@@ -36,7 +37,7 @@ export const musicListSlice = createSlice({
         },
         removeFromList: (state, action) => {
             let myList = state.musicList.filter((item) => {
-                return item.title !== action.payload.title;
+                return item.title !== action.payload.title || item.artist !== action.payload.artist || item.popularity !== action.payload.popularity;
             });
             return {
                 ...state,

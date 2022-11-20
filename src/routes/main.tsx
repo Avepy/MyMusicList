@@ -19,7 +19,6 @@ export default function Main(): JSX.Element {
                 <SearchBar />
             </Nav>
             <List />
-        </Container>
-        
+        </Container> 
     );
 }

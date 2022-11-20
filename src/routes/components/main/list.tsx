@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToList, editRating, removeFromList } from '../../../redux/musicList';
+import { editRating, removeFromList } from '../../../redux/musicList';
 
 export default function List(): JSX.Element {
 
@@ -14,7 +14,7 @@ export default function List(): JSX.Element {
                 return (
                     <div className="item" key={id}>
                         <div className="item-image">
-                            <img src="https://e7.pngegg.com/pngimages/376/34/png-clipart-itunes-music-apple-lanzzz-work-play-logo-apple-purple-text.png" alt="music note" />
+                            <img src={item.url} className="item-image-img" alt="music note" />
                         </div>
                         <div className="item-info">
                             <div className="item-title">
@@ -23,8 +23,8 @@ export default function List(): JSX.Element {
                             <div className="item-artist">
                                 Author: {item.artist}
                             </div>
-                            <div className="item-plays">
-                                Plays: {item.plays}
+                            <div className="item-popularity">
+                                Popularity: {item.popularity}
                             </div>
                         </div>
                         <div className="item-rating">
@@ -35,7 +35,7 @@ export default function List(): JSX.Element {
                                 <select name="rating" className="rating" onInput={
                                     (e) => {
                                         let rating = e.currentTarget.value;
-                                        dispatch(editRating({ title: item.title, artist: item.artist, plays: item.plays, rating: rating }));
+                                        dispatch(editRating({ title: item.title, artist: item.artist, popularity: item.popularity, rating: rating }));
                                     }
                                 }>
                                     <option value="1">1</option>
@@ -47,7 +47,7 @@ export default function List(): JSX.Element {
                             </div>
                         </div>
                         <div className="item-actions">
-                            <button className="item-action-remove" onClick={() => dispatch(removeFromList({ title: item.title, artist: item.artist, plays: item.plays, rating: item.rating }))}>Remove</button>
+                            <button className="item-action-remove" onClick={() => dispatch(removeFromList({ title: item.title, artist: item.artist, popularity: item.popularity, rating: item.rating }))}>Remove</button>
                         </div>
                     </div>
                 );
